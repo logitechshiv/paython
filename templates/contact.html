@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>📞 Contact Us</h2>
+
+<div style="display:flex; gap:40px;">
+
+    <!-- Contact Info -->
+    <div style="flex:1;">
+        <h3>Contact Info</h3>
+        <p>📍 Address: Surat, India</p>
+        <p>📧 Email: info@example.com</p>
+        <p>📞 Phone: +91 1234567890</p>
+    </div>
+
+    <!-- Contact Form -->
+    <div style="flex:1;">
+        <h3>Send Message</h3>
+
+        <form method="post">
+            <input type="text" name="name" placeholder="Your Name" required><br><br>
+            <input type="email" name="email" placeholder="Your Email" required><br><br>
+            <textarea name="message" placeholder="Your Message" required></textarea><br><br>
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+</div>
+
+<br>
+
+<!-- Map -->
+<h3>📍 Our Location</h3>
+
+<iframe 
+    src="https://www.google.com/maps?q=surat&output=embed"
+    width="100%" 
+    height="300"
+    style="border:0;">
+</iframe>
+
+{% endblock %}
