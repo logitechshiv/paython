@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>{{ post.title }}</h2>
+<p>{{ post.body }}</p>
+
+<hr>
+
+<h3>🤖 AI Summary</h3>
+<p>{{ summary }}</p>
+
+<hr>
+<br>
+<a href="/">← Back to Home</a>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Blog Posts</h2>
+
+<!-- 🔍 Search Form -->
+<form method="get">
+    <input type="text" name="q" placeholder="Search posts..." value="{{ query }}">
+    <button type="submit">Search</button>
+</form>
+
+<br>
+
+{% for post in posts %}
+    <div>
+        <a href="/post/{{ post.id }}"> <h3>{{ post.title }}</h3> </a>
+        <p>{{ post.body }}</p>
+        <hr>
+    </div>
+{% endfor %}
+
+<!-- Pagination -->
+<div class="pagination">
+    {% if page > 1 %}
+        <a href="/?page={{ page-1 }}">⬅ Prev</a>
+    {% endif %}
+
+    <span>Page {{ page }}</span>
+
+    {% if page < total_pages %}
+        <a href="/?page={{ page+1 }}">Next ➡</a>
+    {% endif %}
+</div>
+
+{% endblock %}
